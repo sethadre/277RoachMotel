@@ -1,27 +1,56 @@
+/**
+ * FoodBar is an Amenity that can decorate a Room.
+ */
+public class FoodBar extends Amenity
+{
 
-public class FoodBar extends Amenity{
-	
 	protected Room type;
 	public static final int COST = 10;
-	
-	public FoodBar() {
+
+	/**
+	 * Creates a FoodBar that does not decorate any Rooms.
+	 */
+	public FoodBar()
+	{
 		type = null;
 	}
-	
-	public FoodBar(Room type) {
+
+	/**
+	 * Creates a FoodBar that decorates a Room.
+	 * 
+	 * @param type The Room to decorate.
+	 */
+	public FoodBar(Room type)
+	{
 		this.type = type;
 	}
-	
-	public String getDescription() {
+
+	/**
+	 * Returns the description of the Room and its Amenities.
+	 * 
+	 * @return The description of the Room and its Amenities.
+	 */
+	public String getDescription()
+	{
 		return type.getDescription() + " with a Food Bar";
 	}
 
-	public int getCost() {
+	/**
+	 * Returns the cost of the Room and its Amenities.
+	 * 
+	 * @return The cost of the Room and its Amenities.
+	 */
+	public int getCost()
+	{
 		return type.getCost() + COST;
 	}
-	
-	public void accept(RoomVisitor visitor) {
-		
+
+	/**
+	 * TODO
+	 */
+	public void accept(RoomVisitor visitor)
+	{
+
 	}
-	
+
 }

@@ -4,8 +4,8 @@
 public abstract class Amenity extends Room
 {
 	/**
-	 * Returns the description of this Amenity as well as the Room it decorates.
-	 * @return The description of this Amenity as well as the Room it decorates.
+	 * Returns the description of the Room and its Amenities.
+	 * @return The description of the Room and its Amenities.
 	 */
 	public abstract String getDescription();
 }
