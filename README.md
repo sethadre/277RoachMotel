@@ -5,3 +5,4 @@
 - Started on decorator, still needs spa, auto refill, and shower
 
 - Added javadoc comments to Amenity, Bill, FoodBar, Room (Kali)
+- Added Spa, AutoRefill, Shower, but they're unfinished (Kali)
