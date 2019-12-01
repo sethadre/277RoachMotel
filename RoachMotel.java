@@ -6,7 +6,7 @@ public class RoachMotel
 	private ArrayList<Room> rooms;
 
 	/**
-	 * Creates a RoachMotel
+	 * Creates a RoachMotel.
 	 */
 	private RoachMotel()
 	{
@@ -14,7 +14,7 @@ public class RoachMotel
 	}
 
 	/**
-	 * Gets the RoachMotel
+	 * Gets the RoachMotel.
 	 * @return The singular RoachMotel
 	 */
 	public static RoachMotel getInstance()
@@ -27,7 +27,7 @@ public class RoachMotel
 	}
 
 	/**
-	 * Adds a room to the RoachMotel
+	 * Adds a room to the RoachMotel.
 	 * 
 	 * @param r The Room to add
 	 * @return success
@@ -38,7 +38,7 @@ public class RoachMotel
 	}
 
 	/**
-	 * Removes a room from the RoachMotel
+	 * Removes a room from the RoachMotel.
 	 * 
 	 * @param r The Room to remove
 	 * @return success
@@ -46,5 +46,15 @@ public class RoachMotel
 	public boolean removeRoom(Room r)
 	{
 		return rooms.remove(r);
+	}
+	
+	/**
+	 * Returns a String representation of this RoachMotel.
+	 * @return A String representation of this RoachMotel.
+	 */
+	public String toString()
+	{
+		//TODO
+		return "roachmotel";
 	}
 }
