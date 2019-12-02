@@ -8,6 +8,7 @@
 - Added Spa, AutoRefill, Shower, but they're unfinished (Kali)
 - Created methods addRoom, removeRoom, toString, for the RoachMotel (Kali)
 - Implemented Visitor methods (Maid, Room, doNotDisturb) 
+- Created and implemented classes for Observer pattern (Waitlist, WSubject, WObserver)
 ---
 ## Finished Patterns
 - Singleton
@@ -15,7 +16,7 @@
 - Strategy
 - Decorator
 - Factory
+- Observer
 ---
 ## Still need
-- Observer
 - Other features to actually make use of all the code such as RoachColony
