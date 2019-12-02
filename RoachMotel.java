@@ -4,6 +4,7 @@ public class RoachMotel
 {
 	private static RoachMotel instance = null;
 	private Room[] rooms;
+	private static final int NUMBER_OF_ROOMS = 5;
 	private boolean vacancy;
 
 	/**
@@ -11,18 +12,13 @@ public class RoachMotel
 	 */
 	private RoachMotel()
 	{
-		rooms = new Room[5];
-		vacancy = true;
-	}
-	
-	private RoachMotel(int numOfRooms) {
-		rooms = new Room[numOfRooms];
+		rooms = new Room[NUMBER_OF_ROOMS];
 		vacancy = true;
 	}
 
 	/**
 	 * Gets the RoachMotel.
-	 * @return The singular RoachMotel
+	 * @return The singular RoachMotel.
 	 */
 	public static RoachMotel getInstance()
 	{
@@ -33,14 +29,10 @@ public class RoachMotel
 		return instance;
 	}
 	
-	public static RoachMotel getInstance(int numOfRooms) {
-		if (instance == null)
-		{
-			instance = new RoachMotel(numOfRooms);
-		}
-		return instance;
-	}
-	
+	/**
+	 * Returns true if the RoachMotel has vacancy.
+	 * @return True if the RoachMotel has vacancy.
+	 */
 	public boolean hasVacancy() {
 		return vacancy;
 	}
@@ -51,7 +43,6 @@ public class RoachMotel
 	 */
 	public String toString()
 	{
-		// TODO
 		if(vacancy) 
 			return "RoachMotel: Open Rooms";
 		else
