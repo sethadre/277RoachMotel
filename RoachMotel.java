@@ -3,14 +3,21 @@ import java.util.ArrayList;
 public class RoachMotel
 {
 	private static RoachMotel instance = null;
-	private ArrayList<Room> rooms;
+	private Room[] rooms;
+	private boolean vacancy;
 
 	/**
 	 * Creates a RoachMotel.
 	 */
 	private RoachMotel()
 	{
-		rooms = new ArrayList<Room>();
+		rooms = new Room[5];
+		vacancy = true;
+	}
+	
+	private RoachMotel(int numOfRooms) {
+		rooms = new Room[numOfRooms];
+		vacancy = true;
 	}
 
 	/**
@@ -25,27 +32,17 @@ public class RoachMotel
 		}
 		return instance;
 	}
-
-	/**
-	 * Adds a room to the RoachMotel.
-	 * 
-	 * @param r The Room to add
-	 * @return success
-	 */
-	public boolean addRoom(Room r)
-	{
-		return rooms.add(r);
+	
+	public static RoachMotel getInstance(int numOfRooms) {
+		if (instance == null)
+		{
+			instance = new RoachMotel(numOfRooms);
+		}
+		return instance;
 	}
-
-	/**
-	 * Removes a room from the RoachMotel.
-	 * 
-	 * @param r The Room to remove
-	 * @return success
-	 */
-	public boolean removeRoom(Room r)
-	{
-		return rooms.remove(r);
+	
+	public boolean hasVacancy() {
+		return vacancy;
 	}
 	
 	/**
@@ -55,6 +52,9 @@ public class RoachMotel
 	public String toString()
 	{
 		// TODO
-		return "roachmotel";
+		if(vacancy) 
+			return "RoachMotel: Open Rooms";
+		else
+			return "RoachMotel: No Vacancy";
 	}
 }
