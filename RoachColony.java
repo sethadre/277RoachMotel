@@ -1,38 +1,93 @@
+/**
+ * RoachColony can register to a waitlist.
+ */
 
-public class RoachColony {
+public class RoachColony implements WObserver
+{
 	private String name;
 	private int population;
 	private double growthRate;
-	
-	public RoachColony() {
-		name = null;
+
+	/**
+	 * Creates a "default" RoachColony
+	 */
+	public RoachColony()
+	{
+		name = "no_name";
 		population = -1;
 		growthRate = 0;
 	}
-	
-	public RoachColony(String name, int population, double growthRate) {
+
+	/**
+	 * Creates a RoachColony with a name, population, and growth rate
+	 * 
+	 * @param name       The name of the colony
+	 * @param population The population of the colony
+	 * @param growthRate The growth rate of the colony
+	 */
+	public RoachColony(String name, int population, double growthRate)
+	{
 		this.name = name;
 		this.population = population;
 		this.growthRate = growthRate;
 	}
-	
-	public int getPopulation() {
+
+	/**
+	 * Returns the population of the RoachColony
+	 * 
+	 * @return The population of the RoachColony
+	 */
+	public int getPopulation()
+	{
 		return population;
 	}
-	
-	public double getGrowthRate() {
+
+	/**
+	 * Returns the growth rate of the RoachColony
+	 * 
+	 * @return The growth rate of the RoachColony
+	 */
+	public double getGrowthRate()
+	{
 		return growthRate;
 	}
-	
-	public void setPopulation(int newPopSize) {
-		population = newPopSize;
+
+	/**
+	 * Cuts the population of the RoachColony
+	 * 
+	 * @param fatalRate Portion of population to cut (0,1)
+	 */
+	public void setPopulation(double fatalRate)
+	{
+		if (fatalRate > 1 || fatalRate < 0)
+			return;
+		population *= (1.0 - fatalRate);
 	}
-	
-	public void party() {
+
+	/**
+	 * Increases the population of the RoachColony,
+	 * based on their growth rate.
+	 */
+	public void party()
+	{
 		population *= growthRate;
 	}
-	
-	public String toString() {
+
+	/**
+	 * Returns a String representation of the RoachColony
+	 * @return A String representation of the RoachColony
+	 */
+	public String toString()
+	{
 		return "Colony - Name: " + name + "; Pop.: " + population + "; Rate: " + growthRate;
+	}
+
+	/**
+	 * Updates the colony on anything it is observing
+	 * @param newState New state of Object being observered
+	 */
+	public void update(Object newState)
+	{
+		System.out.println("[To:" + name + "]:" + newState);
 	}
 }
