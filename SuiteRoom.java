@@ -1,25 +1,44 @@
-
-public class SuiteRoom extends Room {
+/**
+ * SuiteRoom is a concrete implementation of abstract Room.
+ */
+public class SuiteRoom extends Room
+{
 
 	public static final int COST = 100;
-	
-	public SuiteRoom() {
-		description = null;
+
+	/**
+	 * Creates a SuiteRoom.
+	 */
+	public SuiteRoom()
+	{
+		description = "Suite Room";
 	}
-	
-	public SuiteRoom(String description) {
-		this.description = description;
-	}
-	
-	public int getCost() {
+
+	/**
+	 * Returns the nightly cost of the room.
+	 */
+	public int getCost()
+	{
 		return COST;
 	}
-	
-	public void accept(RoomVisitor visitor) {
-		//Needs to be implemented	
+
+	/**
+	 * Accepts a RoomVisitor to this room.
+	 * 
+	 * @param visitor The RoomVisitor.
+	 */
+	public void accept(RoomVisitor visitor)
+	{
+		visitor.visit(this);
 	}
-	
-	public String toString() {
-		return "Suite Room";
+
+	/**
+	 * Returns a String representation of this room.
+	 * 
+	 * @return A String representation of this room.
+	 */
+	public String toString()
+	{
+		return description;
 	}
 }

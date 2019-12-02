@@ -1,25 +1,44 @@
-
-public class DeluxeRoom extends Room {
+/**
+ * DeluxeRoom is a concrete implementation of abstract Room.
+ */
+public class DeluxeRoom extends Room
+{
 
 	public static final int COST = 75;
-	
-	public DeluxeRoom() {
-		description = null;
+
+	/**
+	 * Creates a DeluxeRoom.
+	 */
+	public DeluxeRoom()
+	{
+		description = "Deluxe Room";
 	}
-	
-	public DeluxeRoom(String description) {
-		this.description = description;
-	}
-	
-	public int getCost() {
+
+	/**
+	 * Returns the nightly cost of the room.
+	 */
+	public int getCost()
+	{
 		return COST;
 	}
-	
-	public void accept(RoomVisitor visitor) {
-		//Needs to be implemented	
+
+	/**
+	 * Accepts a RoomVisitor to this room.
+	 * 
+	 * @param visitor The RoomVisitor.
+	 */
+	public void accept(RoomVisitor visitor)
+	{
+		visitor.visit(this);
 	}
-	
-	public String toString() {
-		return "Deluxe Room";
+
+	/**
+	 * Returns a String representation of this room.
+	 * 
+	 * @return A String representation of this room.
+	 */
+	public String toString()
+	{
+		return description;
 	}
 }

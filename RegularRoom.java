@@ -1,25 +1,44 @@
+/**
+ * RegularRoom is a concrete implementation of abstract Room.
+ */
+public class RegularRoom extends Room
+{
 
-public class RegularRoom extends Room {
-	
-	public static final int COST = 75;
-	
-	public RegularRoom() {
-		description = null;
+	public static final int COST = 50;
+
+	/**
+	 * Creates a RegularRoom.
+	 */
+	public RegularRoom()
+	{
+		description = "Regular Room";
 	}
-	
-	public RegularRoom(String description) {
-		this.description = description;
-	}
-	
-	public int getCost() {
+
+	/**
+	 * Returns the nightly cost of the room.
+	 */
+	public int getCost()
+	{
 		return COST;
 	}
-	
-	public void accept(RoomVisitor visitor) {
-		//Needs to be implemented	
+
+	/**
+	 * Accepts a RoomVisitor to this room.
+	 * 
+	 * @param visitor The RoomVisitor.
+	 */
+	public void accept(RoomVisitor visitor)
+	{
+		visitor.visit(this);
 	}
-	
-	public String toString() {
-		return "Regular Room";
+
+	/**
+	 * Returns a String representation of this room.
+	 * 
+	 * @return A String representation of this room.
+	 */
+	public String toString()
+	{
+		return description;
 	}
 }
