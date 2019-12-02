@@ -5,10 +5,21 @@
 public abstract class Room
 {
 	protected String description;
+	protected boolean doNotDisturb;
 
 	public String getDescription()
 	{
 		return description;
+	}
+	
+	public void setDoNotDisturb( boolean dnd )
+	{
+		doNotDisturb = dnd;
+	}
+	
+	public boolean getDoNotDisturb()
+	{
+		return doNotDisturb;
 	}
 
 	public abstract int getCost();
