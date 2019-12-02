@@ -7,6 +7,7 @@
 - Added javadoc comments to Amenity, Bill, FoodBar, Room (Kali)
 - Added Spa, AutoRefill, Shower, but they're unfinished (Kali)
 - Created methods addRoom, removeRoom, toString, for the RoachMotel (Kali)
+- Implemented Visitor methods (Maid, Room, doNotDisturb) 
 ---
 ## Finished Patterns
 - Singleton
