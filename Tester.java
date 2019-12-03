@@ -12,7 +12,7 @@ public class Tester {
 		RoachMotel rm = RoachMotel.getInstance();
 		//rm.createRooms();
 		System.out.println(rm);
-		RoachColony rc1 = new  RoachColony("first colony",100,200);
+		//RoachColony rc1 = new  RoachColony("first colony",100,200);
 		/*ArrayList theWorks = new ArrayList();
 		amenities.add("FoodBar");
 		amenities.add("Spa");
@@ -20,21 +20,24 @@ public class Tester {
 		amenities.add("Shower");*/
 		//Room r1 = rm.checkIn(rc1,"Suite",amenities);
 		room1.setDoNotDisturb(true);
-		System.out.println(rc1);
+		//System.out.println(rc1);
 		System.out.println(rp1);
 		//System.out.println(amenities);
 
 
-		/*
+
 		RoachColony rc2 = new RoachColony("Second colony",1000,0.2);
+		/*
 		ArrayList amenities2 = new ArrayList();
 		amenities2.add("foodbar");*/
-		MotelRoom r2 = rm.checkIn(rc2,"Deluxe",new String[] {"Spa","Shower","FoodBar","AutoRefill"});
+		Room r2 = rm.checkin(rc2, "deluxe",new String[] {"Spa","Shower","FoodBar","AutoRefill"});
 		System.out.println(rc2);
 		System.out.println(rm);
-		/*
+
 		rc2.party();
+
 		System.out.println(rc2);
+		/*
 		Double cost = rm.checkOut(r2,3,"MasterRoach");
 		System.out.println("cost:" + cost);
 		System.out.println(rm);
