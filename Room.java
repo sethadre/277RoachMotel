@@ -13,21 +13,24 @@ public abstract class Room
 	{
 		return nights;
 	}
-	
+
 	public void incNights()
 	{
-		nights++; 
+		nights++;
 	}
-	
-	public RoachColony getColony() {
+
+	public RoachColony getColony()
+	{
 		return roomColony;
 	}
 
 	/**
 	 * Sets the rooms Colony to passed in colony
+	 * 
 	 * @param roomColony the roomColony to set
 	 */
-	public void setRoomColony(RoachColony roomColony) {
+	public void setRoomColony(RoachColony roomColony)
+	{
 		this.roomColony = roomColony;
 	}
 
@@ -35,12 +38,12 @@ public abstract class Room
 	{
 		return description;
 	}
-	
-	public void setDoNotDisturb( boolean dnd )
+
+	public void setDoNotDisturb(boolean dnd)
 	{
 		doNotDisturb = dnd;
 	}
-	
+
 	public boolean getDoNotDisturb()
 	{
 		return doNotDisturb;

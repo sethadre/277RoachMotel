@@ -43,39 +43,51 @@ public class RoachMotel
 	{
 		return (rooms.size() < MAX_NUMBER_OF_ROOMS) ? true : false;
 	}
-	
+
 	/**
-	 * create a Room and Check in a colony to the room
-	 * then add to the list of rooms.
+	 * create a Room and Check in a colony to the room then add to the list of
+	 * rooms.
+	 * 
 	 * @param rc
 	 * @param rmtype
 	 * @param amenities
+	 * @return the checked-in room
 	 */
-	public void checkin(RoachColony rc, String rmtype, String[] amenities)
+	public Room checkin(RoachColony rc, String rmtype, String[] amenities)
 	{
-		if(hasVacancy()) {
-			//create room and assign colony
-			Room rm = rf.getRoom(rc, rmtype, amenities);
-			//TODO assign colony to room
+		if (hasVacancy())
+		{
+			// create room and assign colony
+			Room rm = rf.getRoom(rmtype, amenities);
+			rm.setRoomColony(rm);
 			rooms.add(rm);
+			return rm;
 		}
-		else {
+		else
+		{
 			System.out.println("No vacancy, colony will be moved to waitlist");
 			wlist.addObserver(rc);
+			return null;
 		}
 	}
-	
+
+	public void checkout(Room rm)
+	{
+		rm.getColony().getPaymentStrategy().pay(rm.getCost() * rm.getNights());
+		rooms.remove(rm);
+	}
+
 	public void clean()
 	{
-		for ( Room r : rooms )
+		for (Room r : rooms)
 		{
 			r.accept(m);
 		}
 	}
-	
+
 	public void incNight()
 	{
-		for ( Room r : rooms )
+		for (Room r : rooms)
 		{
 			r.incNight();
 		}
@@ -83,11 +95,14 @@ public class RoachMotel
 
 	/**
 	 * cullRoom reduces the population by a factor of .5 or .25
+	 * 
 	 * @param rm - Room to be culled
 	 */
-	public void cullRoom(Room rm) {
+	public void cullRoom(Room rm)
+	{
 		double cullRate = 0.5;
-		if(rm.getDescription().contains("Shower")) {
+		if (rm.getDescription().contains("Shower"))
+		{
 			cullRate = 0.25;
 		}
 		rm.getColony().setPopulation(cullRate);

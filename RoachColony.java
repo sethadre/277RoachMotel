@@ -7,6 +7,7 @@ public class RoachColony implements WObserver
 	private String name;
 	private int population;
 	private double growthRate;
+	private PaymentStrategy ps;
 
 	/**
 	 * Creates a "default" RoachColony
@@ -16,6 +17,7 @@ public class RoachColony implements WObserver
 		name = "no_name";
 		population = -1;
 		growthRate = 0;
+		ps = null;
 	}
 
 	/**
@@ -25,11 +27,17 @@ public class RoachColony implements WObserver
 	 * @param population The population of the colony
 	 * @param growthRate The growth rate of the colony
 	 */
-	public RoachColony(String name, int population, double growthRate)
+	public RoachColony(String name, int population, double growthRate, PaymentStrategy ps)
 	{
 		this.name = name;
 		this.population = population;
 		this.growthRate = growthRate;
+		this.ps = ps;
+	}
+
+	public PaymentStrategy getPaymentStrategy()
+	{
+		return ps;
 	}
 
 	/**
@@ -65,8 +73,7 @@ public class RoachColony implements WObserver
 	}
 
 	/**
-	 * Increases the population of the RoachColony,
-	 * based on their growth rate.
+	 * Increases the population of the RoachColony, based on their growth rate.
 	 */
 	public void party()
 	{
@@ -75,6 +82,7 @@ public class RoachColony implements WObserver
 
 	/**
 	 * Returns a String representation of the RoachColony
+	 * 
 	 * @return A String representation of the RoachColony
 	 */
 	public String toString()
@@ -84,6 +92,7 @@ public class RoachColony implements WObserver
 
 	/**
 	 * Updates the colony on anything it is observing
+	 * 
 	 * @param newState New state of Object being observered
 	 */
 	public void update(Object newState)
