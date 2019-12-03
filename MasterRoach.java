@@ -1,26 +1,56 @@
-
-public class MasterRoach implements PaymentStrategy {
+/**
+ * MasterRoach is a payment strategy. Requires a name, code, security number,
+ * expiry date
+ */
+public class MasterRoach implements PaymentStrategy
+{
 	private String name, code, number, date;
-	
-	public MasterRoach() {
+
+	/**
+	 * Create a default (blank) MasterRoach payment method
+	 */
+	public MasterRoach()
+	{
 		name = null;
 		code = null;
 		number = null;
 		date = null;
 	}
-	
-	public MasterRoach(String name, String code, String number, String date) {
+
+	/**
+	 * Create a MasterRoach payment method with a name, code, security number,
+	 * expiry date
+	 * 
+	 * @param name   Cardholder name
+	 * @param code   Credit Card Number
+	 * @param number Security Code
+	 * @param date   Expiry Date
+	 */
+	public MasterRoach(String name, String code, String number, String date)
+	{
 		this.name = name;
 		this.code = code;
 		this.number = number;
 		this.date = date;
 	}
-	
-	public void pay(int amount) {
-		//do something
+
+	/**
+	 * Pay for an amount with this MasterRoach card
+	 * 
+	 * @param amount The amount to be paid for
+	 */
+	public void pay(int amount)
+	{
+		System.out.println("Paid " + amount + " using " + toString());
 	}
-	
-	public String toString() {
-		return name + " : " + number + " - " + code + "; " + date;
+
+	/**
+	 * Returns a String representation of this MasterRoach
+	 * 
+	 * @return A String representation of this MasterRoach
+	 */
+	public String toString()
+	{
+		return "[MasterRoach]:" + name + " - " + number + " (" + code + ") " + date;
 	}
 }
