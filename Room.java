@@ -4,8 +4,21 @@
  */
 public abstract class Room
 {
+	protected RoachColony roomColony;
 	protected String description;
 	protected boolean doNotDisturb;
+
+	public RoachColony getColony() {
+		return roomColony;
+	}
+
+	/**
+	 * Sets the rooms Colony to passed in colony
+	 * @param roomColony the roomColony to set
+	 */
+	public void setRoomColony(RoachColony roomColony) {
+		this.roomColony = roomColony;
+	}
 
 	public String getDescription()
 	{
