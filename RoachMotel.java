@@ -3,8 +3,8 @@ import java.util.ArrayList;
 public class RoachMotel
 {
 	private static RoachMotel instance = null;
-	private Room[] rooms;
-	private static final int NUMBER_OF_ROOMS = 5;
+	private ArrayList<Room> rooms;
+	private static final int MAX_NUMBER_OF_ROOMS = 5;
 	private Waitlist wlist;
 	private RoomFactory rf;
 
@@ -13,7 +13,7 @@ public class RoachMotel
 	 */
 	private RoachMotel()
 	{
-		rooms = new Room[NUMBER_OF_ROOMS];
+		rooms = new ArrayList<Room>(MAX_NUMBER_OF_ROOMS);
 		wlist = new Waitlist();
 		rf = new RoomFactory();
 	}
@@ -39,61 +39,27 @@ public class RoachMotel
 	 */
 	public boolean hasVacancy()
 	{
-		for (int i = 0; i < NUMBER_OF_ROOMS; i++)
-		{
-			if (rooms[i] == null)
-			{
-				return true;
-			}
-		}
-		return false;
+		return (rooms.size() < MAX_NUMBER_OF_ROOMS) ? true : false;
 	}
-
+	
 	/**
-	 * Set a room in the RoachMotel.
-	 * 
-	 * @param i  Room number [0-limit)
-	 * @param rm The room to set
-	 * @return Room that was set
+	 * create a Room and Check in a colony to the room
+	 * then add to the list of rooms.
+	 * @param rc
+	 * @param rmtype
+	 * @param amenities
 	 */
-	public Room setRoom(int i, Room rm)
-	{
-		if (i >= NUMBER_OF_ROOMS)
-			return null;
-		return rooms[i] = rm;
-	}
-
 	public void checkin(RoachColony rc, String rmtype, String[] amenities)
 	{
-		if (!hasVacancy())
-		{
+		if(hasVacancy()) {
+			//create room and assign colony
+			Room rm = rf.getRoom(rmtype, amenities);
+			//TODO assign colony to room
+			rooms.add(rm);
+		}
+		else {
 			System.out.println("No vacancy, colony will be moved to waitlist");
 			wlist.addObserver(rc);
-		}
-		else
-		{
-			Room rm = rf.getRoom(rmtype);
-			for (int i = 0; i < amentities.length; i++)
-			{
-				switch (amentities[i].toLowerCase())
-				{
-					case "foodbar":
-						rm = FoodBar(rm);
-						break;
-					case "shower":
-						rm = Shower(rm);
-						break;
-					case "spa":
-						rm = Spa(rm);
-						break;
-					case "autorefill":
-						rm = AutoRefill(rm);
-						break;
-					default:
-						break;
-				}
-			}
-			// TODO code to add room to room list
 		}
 	}
 
