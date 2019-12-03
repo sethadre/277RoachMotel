@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Waitlist implements WSubject
 {
-	private ArrayList<WObserver> wlist;
+	private ArrayList<WObserver> wList;
 
 	/**
 	 * Creates a WaitList
