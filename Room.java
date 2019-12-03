@@ -6,7 +6,18 @@ public abstract class Room
 {
 	protected String description;
 	protected boolean doNotDisturb;
+	protected int nights;
 
+	public int getNights()
+	{
+		return nights;
+	}
+	
+	public void incNights()
+	{
+		nights++;
+	}
+	
 	public String getDescription()
 	{
 		return description;
