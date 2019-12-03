@@ -18,6 +18,7 @@ public class RoachMotel
 
 	/**
 	 * Gets the RoachMotel.
+	 * 
 	 * @return The singular RoachMotel.
 	 */
 	public static RoachMotel getInstance()
@@ -28,22 +29,25 @@ public class RoachMotel
 		}
 		return instance;
 	}
-	
+
 	/**
 	 * Returns true if the RoachMotel has vacancy.
+	 * 
 	 * @return True if the RoachMotel has vacancy.
 	 */
-	public boolean hasVacancy() {
+	public boolean hasVacancy()
+	{
 		return vacancy;
 	}
-	
+
 	/**
 	 * Returns a String representation of this RoachMotel.
+	 * 
 	 * @return A String representation of this RoachMotel.
 	 */
 	public String toString()
 	{
-		if(vacancy) 
+		if (vacancy)
 			return "RoachMotel: Open Rooms";
 		else
 			return "RoachMotel: No Vacancy";
