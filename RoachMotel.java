@@ -5,6 +5,8 @@ public class RoachMotel
 	private static RoachMotel instance = null;
 	private Room[] rooms;
 	private static final int NUMBER_OF_ROOMS = 5;
+	private Waitlist wlist;
+	private RoomFactory rf;
 
 	/**
 	 * Creates a RoachMotel.
@@ -12,6 +14,8 @@ public class RoachMotel
 	private RoachMotel()
 	{
 		rooms = new Room[NUMBER_OF_ROOMS];
+		wlist = new Waitlist();
+		rf = new RoomFactory();
 	}
 
 	/**
@@ -35,11 +39,11 @@ public class RoachMotel
 	 */
 	public boolean hasVacancy()
 	{
-		for (int i = 0; i < NUMBER_OF_ROOMS ; i++)
+		for (int i = 0; i < NUMBER_OF_ROOMS; i++)
 		{
-			if ( rooms[i] == null )
+			if (rooms[i] == null)
 			{
-				return true
+				return true;
 			}
 		}
 		return false;
@@ -59,8 +63,40 @@ public class RoachMotel
 		return rooms[i] = rm;
 	}
 
-	
-	
+	public void checkin(RoachColony rc, String rmtype, String[] amenities)
+	{
+		if (!hasVacancy())
+		{
+			System.out.println("No vacancy, colony will be moved to waitlist");
+			wlist.addObserver(rc);
+		}
+		else
+		{
+			Room rm = rf.getRoom(rmtype);
+			for (int i = 0; i < amentities.length; i++)
+			{
+				switch (amentities[i].toLowerCase())
+				{
+					case "foodbar":
+						rm = FoodBar(rm);
+						break;
+					case "shower":
+						rm = Shower(rm);
+						break;
+					case "spa":
+						rm = Spa(rm);
+						break;
+					case "autorefill":
+						rm = AutoRefill(rm);
+						break;
+					default:
+						break;
+				}
+			}
+			// TODO code to add room to room list
+		}
+	}
+
 	/**
 	 * Returns a String representation of this RoachMotel.
 	 * 
