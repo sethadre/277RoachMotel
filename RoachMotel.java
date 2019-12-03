@@ -7,6 +7,7 @@ public class RoachMotel
 	private static final int MAX_NUMBER_OF_ROOMS = 5;
 	private Waitlist wlist;
 	private RoomFactory rf;
+	private Maid m;
 
 	/**
 	 * Creates a RoachMotel.
@@ -16,6 +17,7 @@ public class RoachMotel
 		rooms = new ArrayList<Room>(MAX_NUMBER_OF_ROOMS);
 		wlist = new Waitlist();
 		rf = new RoomFactory();
+		m = new Maid();
 	}
 
 	/**
@@ -60,6 +62,22 @@ public class RoachMotel
 		else {
 			System.out.println("No vacancy, colony will be moved to waitlist");
 			wlist.addObserver(rc);
+		}
+	}
+	
+	public void clean()
+	{
+		for ( Room r : rooms )
+		{
+			r.accept(m);
+		}
+	}
+	
+	public void incNight()
+	{
+		for ( Room r : rooms )
+		{
+			r.incNight();
 		}
 	}
 

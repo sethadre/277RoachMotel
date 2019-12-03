@@ -15,7 +15,7 @@ public abstract class Room
 	
 	public void incNights()
 	{
-		nights++;
+		nights++; 
 	}
 	
 	public String getDescription()
