@@ -50,14 +50,17 @@ public class RoachMotel
 	 * 
 	 * @param i  Room number [0-limit)
 	 * @param rm The room to set
+	 * @return Room that was set
 	 */
-	public void setRoom(int i, Room rm)
+	public Room setRoom(int i, Room rm)
 	{
 		if (i >= NUMBER_OF_ROOMS)
-			return;
-		rooms[i] = rm;
+			return null;
+		return rooms[i] = rm;
 	}
 
+	
+	
 	/**
 	 * Returns a String representation of this RoachMotel.
 	 * 
