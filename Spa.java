@@ -46,11 +46,13 @@ public class Spa extends Amenity
 	}
 
 	/**
-	 * TODO
+	 * Accepts a RoomVisitor to this room.
+	 * 
+	 * @param visitor The RoomVisitor.
 	 */
 	public void accept(RoomVisitor visitor)
 	{
-
+		this.type.accept(visitor);
 	}
 
 }
