@@ -55,7 +55,7 @@ public class RoachMotel
 	{
 		if(hasVacancy()) {
 			//create room and assign colony
-			Room rm = rf.getRoom(rmtype, amenities);
+			Room rm = rf.getRoom(rc, rmtype, amenities);
 			//TODO assign colony to room
 			rooms.add(rm);
 		}
@@ -79,6 +79,19 @@ public class RoachMotel
 		{
 			r.incNight();
 		}
+	}
+
+	/**
+	 * cullRoom reduces the population by a factor of .5 or .25
+	 * @param rm - Room to be culled
+	 */
+	public void cullRoom(Room rm) {
+		double cullRate = 0.5;
+		if(rm.getDescription().contains("Shower")) {
+			cullRate = 0.25;
+		}
+		rm.getColony().setPopulation(cullRate);
+		System.out.println("Room has been culled by staff");
 	}
 
 	/**
