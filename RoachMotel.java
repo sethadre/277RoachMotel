@@ -75,6 +75,8 @@ public class RoachMotel
 	{
 		rm.getColony().getPaymentStrategy().pay(rm.getCost() * rm.getNights());
 		rooms.remove(rm);
+		wlist.notifyObservers();
+		wlist = new Waitlist();
 	}
 
 	public void clean()
