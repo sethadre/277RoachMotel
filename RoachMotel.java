@@ -39,7 +39,7 @@ public class RoachMotel
 		{
 			if ( rooms[i] == null )
 			{
-				return true
+				return true;
 			}
 		}
 		return false;
