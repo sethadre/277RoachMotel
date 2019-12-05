@@ -59,7 +59,7 @@ public class RoachMotel
 		{
 			// create room and assign colony
 			Room rm = rf.getRoom(rmtype, amenities);
-			rm.setRoomColony(rm);
+			rm.setRoomColony(rc);
 			rooms.add(rm);
 			return rm;
 		}
@@ -87,11 +87,11 @@ public class RoachMotel
 		}
 	}
 
-	public void incNight()
+	public void incNights()
 	{
 		for (Room r : rooms)
 		{
-			r.incNight();
+			r.incNights();
 		}
 	}
 
