@@ -57,7 +57,7 @@ public class Tester {
 		System.out.println(room5.getDescription());
 		System.out.println("*******Display status of roach motel after five rooms have been checked in");
 		System.out.println(rm);
-		room3.setDoNotDisturb(true);
+		room3.setDoNotDisturb(false);
 		System.out.println("*******Setting room 3 to Do Not Disturb");
 		System.out.println("*******Getting ready to clean the rooms");
 		rm.clean();

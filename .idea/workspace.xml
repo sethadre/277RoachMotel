@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7aa6f3b2-34f0-4095-b2c9-0bdce66e9f9d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/RoachMotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/RoachMotel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tester.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tester.java" afterDir="false" />
-    </list>
+    <list default="true" id="7aa6f3b2-34f0-4095-b2c9-0bdce66e9f9d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575522631035</updated>
-      <workItem from="1575522632280" duration="1076000" />
+      <workItem from="1575522632280" duration="1477000" />
     </task>
     <servers />
   </component>
