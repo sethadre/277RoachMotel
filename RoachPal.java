@@ -1,5 +1,10 @@
 /**
  * RoachPal is a payment method, with a name and email
+ * @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public class RoachPal implements PaymentStrategy
 {

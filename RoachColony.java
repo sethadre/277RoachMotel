@@ -1,5 +1,10 @@
 /**
  * RoachColony can register to a waitlist.
+ * @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 
 public class RoachColony implements WObserver

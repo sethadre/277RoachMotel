@@ -1,5 +1,11 @@
 import java.util.ArrayList;
-
+/*
+* @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
+ */
 public class RoachMotel
 {
 	private static RoachMotel instance = null;

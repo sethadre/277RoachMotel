@@ -2,6 +2,11 @@ import java.util.ArrayList;
 
 /**
  * WObservers can register to this waitlist to be notified in the future
+ * @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 
 public class Waitlist implements WSubject

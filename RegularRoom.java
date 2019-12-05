@@ -1,5 +1,10 @@
 /**
  * RegularRoom is a concrete implementation of abstract Room.
+ * @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public class RegularRoom extends Room
 {

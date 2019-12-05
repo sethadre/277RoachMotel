@@ -1,6 +1,11 @@
 /**
  * Rooms of different types are made in a RoomFactory. Rooms can be visited by
  * RoomVisitors. Rooms can be decorated by an Amenity.
+ * @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public abstract class Room
 {

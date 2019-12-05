@@ -1,5 +1,10 @@
 /**
  * AutoRefill is an Amenity that can decorate a Room.
+* @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public class AutoRefill extends Amenity
 {

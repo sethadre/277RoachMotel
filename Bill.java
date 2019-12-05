@@ -4,6 +4,11 @@ import java.util.List;
 /**
  * Bill depends on a payment strategy and has charges. Charges can be added to a
  * bill. A final payment method can be passed through a method to pay.
+* @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public class Bill
 {

@@ -1,3 +1,10 @@
+/**
+ * @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
+ */
 import java.util.ArrayList;
 
 public class Tester {

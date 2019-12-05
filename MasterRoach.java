@@ -1,6 +1,11 @@
 /**
  * MasterRoach is a payment strategy. Requires a name, code, security number,
  * expiry date
+* @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public class MasterRoach implements PaymentStrategy
 {

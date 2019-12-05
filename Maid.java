@@ -1,5 +1,10 @@
 /**
  * Maid is a RoomVisitor. Maid will clean rooms if the doNotDisturb sign is off.
+* @author Tanner Lowthorp
+ * @author Evan Chen
+ * @author Kali
+ * @author Adrian
+ * @author William
  */
 public class Maid implements RoomVisitor
 {
